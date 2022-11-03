@@ -1,0 +1,2 @@
+log: "Nov 3 11:00:50 UserLogin: DemoUser|LoggedIn"
+sending command: echo "<5>Nov 3 11:00:50 UserLogin: DemoUser|LoggedIn" | nc %%RLSIP%% 1290

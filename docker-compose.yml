@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  
+  landing:
+    build:
+      context: ./Landing
+    
+    networks:
+      idapsimnetwork:
+        ipv4_address: 10.5.0.6
+  
+  rls:
+    build:
+      context: ./RLS
+
+    networks:
+      idapsimnetwork:
+        ipv4_address: 10.5.0.5
+  
+  microservice:
+    build:
+      context: ./MicroService
+
+    networks:
+      idapsimnetwork:
+        ipv4_address: 10.5.0.4
+
+networks:
+  idapsimnetwork:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16
+          gateway: 10.5.0.1
